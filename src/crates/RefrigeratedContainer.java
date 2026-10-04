@@ -11,8 +11,7 @@ public class RefrigeratedContainer extends BaseCargo {
 
   @Override 
   public String getType() {
-    return String.format("Это морозильная камера, id: %s, необходимая температура: %f",
-    getId(), getTargetTemperature());
+    return "Морозильная камера";
   }
 
   public double getTargetTemperature() { return targetTemperature; }

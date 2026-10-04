@@ -7,6 +7,6 @@ public class StandardBox extends BaseCargo {
 
   @Override 
   public String getType() {
-    return "Стандартный контейнер, id: " + getId();
+    return "Стандартный контейнер";
   }
 }
