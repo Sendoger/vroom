@@ -1,8 +1,9 @@
 package vroom.src.cars;
 
-public class Truck extends Vehicle {
-  boolean hasTrailer;
-  double maxCapacityKg;
+public class Truck extends Vehicle implements ITrackable{
+  private boolean hasTrailer;
+  private double latitude = 0;
+  private double longitude = 0;
   
   public Truck(String id, boolean hasTrailer) {
     this.hasTrailer = hasTrailer;
@@ -13,6 +14,17 @@ public class Truck extends Vehicle {
 
   public void move() {
     System.out.println("Грузовик " + getId() + " едет по трассе со скоростью 70 км/ч");
+    
+    latitude += Math.random();
+    longitude += Math.random();
+  }
+
+  public String getCurrentCoordinates() {
+    return "Координаты грузовика: " + latitude + " ; " + longitude;
+  }
+
+  public void sendStatusUpdate() {
+    System.out.println("Посылка прошла таможню");
   }
   
   public boolean getHasTrailer() { return hasTrailer; }
