@@ -10,8 +10,7 @@ public class FragileItem extends BaseCargo {
 
   @Override 
   public String getType() {
-    return String.format("Это хрупкий объект, id: %s, %s", 
-                          getId(), getSpecialHandling() ? "необходимо ОЧЕНЬ БЕРЕЖНОЕ ОТНОШЕНИЕ" : "можно немножко попинать");
+    return "Хрупкий объект";
   }
 
   public boolean getSpecialHandling() { return requiresSpecialHandling; }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import vroom.src.cars.*;
 import vroom.src.crates.*;
+import vroom.src.report.Report;
 
 public class Main {
   public static void main(String[] args) {
@@ -40,5 +41,17 @@ public class Main {
     LogisticsCenter logistics = new LogisticsCenter();
     logistics.dispatch(trackables);
     logistics.monitorFleet(trackables);
+
+    Warehouse<StandardBox> standardWarehouse = new Warehouse<>();
+    Warehouse <FragileItem> fragileWarehouse = new Warehouse<>();
+
+    standardWarehouse.addItem(box);
+    fragileWarehouse.addItem(extraFragile);
+    fragileWarehouse.addItem(fragile);
+    //standardWarehouse.addItem(fragile); тип не соответсвует заданному
+    Report<Warehouse<StandardBox>> reportStandard = new Report<>(standardWarehouse);
+    Report<Warehouse<FragileItem>> reportFragile = new Report<>(fragileWarehouse);
+    reportStandard.printReport();
+    reportFragile.printReport();
   }
 }
