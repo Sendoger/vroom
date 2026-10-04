@@ -1,7 +1,7 @@
 package vroom.src.cars;
 
 public class Drone extends Vehicle {
-  public int batteryLevel;
+  private int batteryLevel;
   
   public Drone(String id, int batteryLevel) {
     super(id, 5);

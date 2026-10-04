@@ -1,7 +1,7 @@
 package vroom.src.cars;
 
 public class Car extends Vehicle {
-  int passengerCount;
+  private int passengerCount;
   public Car(String id, int passengerCount) {
     super(id, 500);
     this.passengerCount = passengerCount;
