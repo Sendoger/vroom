@@ -2,11 +2,8 @@ package vroom.src;
 
 import java.util.ArrayList;
 
-import vroom.src.cars.Car;
-import vroom.src.cars.Drone;
-import vroom.src.cars.FleetManager;
-import vroom.src.cars.Truck;
-import vroom.src.cars.Vehicle;
+import vroom.src.cars.*;
+import vroom.src.crates.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -25,5 +22,23 @@ public class Main {
     System.out.println(truckNoTrailer.getMaxCapacityKg());
     System.out.println(truckTrailer.getMaxCapacityKg());
     
+    StandardBox box = new StandardBox("67-0", "AliExpress", 5);
+    RefrigeratedContainer fridge = new RefrigeratedContainer("13-5", "Boch", 500, -50);
+    FragileItem fragile = new FragileItem("34-2", "vase", 2, false);
+    FragileItem extraFragile = new FragileItem("11-1", "isotope of uranium", 100000000, true);
+    
+    System.out.println(box.getType());
+    System.out.println(fragile.getType());
+    System.out.println(extraFragile.getType());
+    System.out.println(fridge.getType());
+
+    ArrayList<ITrackable> trackables = new ArrayList<>();
+    trackables.add(drone);
+    trackables.add(truckNoTrailer);
+    //trackables.add(car); ошибка
+
+    LogisticsCenter logistics = new LogisticsCenter();
+    logistics.dispatch(trackables);
+    logistics.monitorFleet(trackables);
   }
 }
