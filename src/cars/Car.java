@@ -8,7 +8,7 @@ public class Car extends Vehicle {
   }
 
   public void move() {
-    System.out.println("Машина поехала");
+    System.out.println("Легковой автомобиль " + getId() + " едет по дороге со скоростью 90 км/ч");
   }
 
   public int getPassengerCount() { return passengerCount; }

@@ -5,17 +5,16 @@ public class Truck extends Vehicle {
   double maxCapacityKg;
   
   public Truck(String id, boolean hasTrailer) {
-    super(id, 1000);
     this.hasTrailer = hasTrailer;
+    //6000 with trailer, 1000 without
+    super(id, (hasTrailer ? 6000 : 1000));
     
-    if (hasTrailer) {
-      this.maxCapacityKg += 5000;
-    }
   }
 
   public void move() {
-    System.out.println("Грузовик выехал");
+    System.out.println("Грузовик " + getId() + " едет по трассе со скоростью 70 км/ч");
   }
   
   public boolean getHasTrailer() { return hasTrailer; }
+
 }
