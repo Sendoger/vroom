@@ -1,8 +1,7 @@
 package vroom.src.cars;
 
 public class Truck extends Vehicle {
-  boolean hasTrailer;
-  double maxCapacityKg;
+  private boolean hasTrailer;
   
   public Truck(String id, boolean hasTrailer) {
     this.hasTrailer = hasTrailer;
