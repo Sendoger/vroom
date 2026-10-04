@@ -9,7 +9,12 @@ public class Drone extends Vehicle {
   }
   
   public void move() {
-    System.out.println("Дрон полетел");
+    if (batteryLevel > 0) {
+      System.out.println("Дрон " + getId() + " летит по воздуху, заряд батареи: " + getBatteryLevel() +"%" );
+      batteryLevel -= 5;
+    } else {
+      System.out.println("Дрон остановился, заряд на нуле");
+    }
   }
 
   public int getBatteryLevel() { return batteryLevel; }
