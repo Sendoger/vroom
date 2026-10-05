@@ -6,7 +6,7 @@ public class Truck extends Vehicle {
   public Truck(String id, double maxCapacityKg, boolean hasTrailer) {
     this.hasTrailer = hasTrailer;
     //6000 with trailer, 1000 without
-    super(id, (hasTrailer ? maxCapacityKg + 5000 : 1000));
+    super(id, (hasTrailer ? maxCapacityKg + 5000 : maxCapacityKg));
     
   }
 
