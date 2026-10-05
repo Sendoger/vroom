@@ -1,6 +1,8 @@
 package vroom.src.report;
 
-public class Report<T> {
+import vroom.src.crates.Warehouse;
+
+public class Report<T extends Warehouse<?>> {
   T data;
 
   public Report (T data) {
@@ -8,6 +10,6 @@ public class Report<T> {
   }
 
   public void printReport() {
-    System.out.println(data.toString());
+    System.out.println(data.toString() + ". Общий вес: " + data.getTotalWeight());
   }
 }
