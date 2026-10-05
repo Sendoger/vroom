@@ -5,10 +5,10 @@ public class Truck extends Vehicle implements ITrackable{
   private double latitude = 0;
   private double longitude = 0;
   
-  public Truck(String id, boolean hasTrailer) {
+  public Truck(String id, double maxCapacityKg, boolean hasTrailer) {
     this.hasTrailer = hasTrailer;
     //6000 with trailer, 1000 without
-    super(id, (hasTrailer ? 6000 : 1000));
+    super(id, (hasTrailer ? maxCapacityKg + 5000 : maxCapacityKg));
     
   }
 
