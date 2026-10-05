@@ -8,8 +8,8 @@ public class Main {
   public static void main(String[] args) {
   
     Car car = new Car("5-12", 4);
-    Truck truckNoTrailer = new Truck("55-1", false);
-    Truck truckTrailer = new Truck("2-08", true);
+    Truck truckNoTrailer = new Truck("55-1", 1000, false);
+    Truck truckTrailer = new Truck("2-08", 1000, true);
     Drone drone = new Drone("3-12", 50);
 
     System.out.println(truckNoTrailer.getMaxCapacityKg());
